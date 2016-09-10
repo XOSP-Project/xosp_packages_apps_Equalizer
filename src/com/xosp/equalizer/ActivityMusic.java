@@ -462,12 +462,9 @@ public class ActivityMusic extends Activity {
         super.onResume();
         if ((mVirtualizerSupported) || (mBassBoostSupported) || (mEqualizerSupported)
                 || (mPresetReverbSupported)) {
-            // Register for AudioPortUpdateListener that might affect the onscreen UI.
-            if (mAudioPortUpdateListener == null) {
                 AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
                 mAudioPortUpdateListener = new MyOnAudioPortUpdateListener();
                 am.registerAudioPortUpdateListener(mAudioPortUpdateListener);
-            }
 
             // Update UI
             updateUI();
@@ -485,11 +482,8 @@ public class ActivityMusic extends Activity {
 
         // Unregister AudioPortUpdateListener. (These affect the visible UI,
         // so we only care about them while we're in the foreground.)
-        if (mAudioPortUpdateListener != null) {
             AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
             am.unregisterAudioPortUpdateListener(mAudioPortUpdateListener);
-            mAudioPortUpdateListener = null;
-        }
 
     }
 
