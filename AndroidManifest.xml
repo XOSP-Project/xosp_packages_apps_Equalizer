@@ -15,24 +15,26 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.musicfx"
+    package="com.xosp.equalizer"
     android:installLocation="auto"
-    android:versionName="1.4" android:versionCode="10400">
+    android:versionName="1.2" android:versionCode="12000">
     
     <uses-permission
-        android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
+        android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"></uses-permission>
     <uses-permission
-        android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS"></uses-permission>
     <uses-permission
-        android:name="android.permission.MODIFY_AUDIO_ROUTING" />
+        android:name="android.permission.MODIFY_AUDIO_ROUTING"></uses-permission>
     <uses-permission
-        android:name="android.permission.INTERNET" />
+        android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission
         android:name="android.permission.BLUETOOTH"></uses-permission>
     <application
-        android:icon="@drawable/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:persistent="true"
+        android:allowBackup="true"
         android:theme="@android:style/Theme.NoTitleBar">
         <activity
             android:name=".ActivityMusic"
@@ -48,6 +50,7 @@
                     android:name="android.intent.category.CATEGORY_CONTENT_MUSIC" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ControlPanelPicker"
             android:theme="@*android:style/Theme.Holo.Dialog.Alert"

@@ -36,7 +36,7 @@
             android:layout_alignParentTop="true"
             android:alpha="0.54"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
         <TextView
             android:id="@+id/centerLevelText"
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:alpha="0.54"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
         <TextView
             android:id="@+id/minLevelText"
             android:layout_width="wrap_content"
@@ -52,6 +52,6 @@
             android:layout_alignParentBottom="true"
             android:alpha="0.54"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
     </RelativeLayout>
 </LinearLayout>

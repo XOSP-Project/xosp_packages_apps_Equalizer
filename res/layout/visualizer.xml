@@ -35,7 +35,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     android:layout_height="wrap_content"
     android:gravity="bottom|center_horizontal">
 
-    <com.android.musicfx.seekbar.SeekBar
+    <com.xosp.equalizer.seekbar.SeekBar
         android:id="@+id/EQBandSeekBar"
         style="@style/Widget.Holo.SeekBar.Vertical"
         android:layout_marginStart="@dimen/eq_slider_margin"
@@ -51,5 +51,5 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:gravity="center"
         android:alpha="0.54"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/white" />
 </LinearLayout>

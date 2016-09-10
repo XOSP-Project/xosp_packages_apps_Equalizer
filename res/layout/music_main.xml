@@ -15,10 +15,10 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res/com.android.musicfx"
+    xmlns:custom="http://schemas.android.com/apk/res/com.xosp.equalizer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eeeeee"
+    android:background="#2c3e50"
     android:orientation="vertical" >
 
     <TextView
@@ -43,7 +43,7 @@
             android:id="@+id/togglelayout"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="#9e9e9e"
+            android:background="#34495e"
             android:orientation="horizontal" >
 
             <TextView
@@ -56,7 +56,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/toggle_button_on"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ffffff" />
+                android:textColor="@android:color/white" />
 
 
             <ToggleButton
@@ -71,11 +71,12 @@
                 android:textOn="" />
         </LinearLayout>
 
-        <com.android.musicfx.widget.InterceptableLinearLayout
+        <com.xosp.equalizer.widget.InterceptableLinearLayout
             android:id="@+id/contentSoundEffects"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/togglelayout"
+            android:background="#2c3e50"
             android:orientation="vertical" >
 
             <include
@@ -84,12 +85,12 @@
                 android:layout_weight="27"
                 layout="@layout/music_eq" />
 
-            <com.android.musicfx.widget.Gallery
+            <com.xosp.equalizer.widget.Gallery
                 android:id="@+id/eqPresets"
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="7"
-                android:background="#ffffff"
+                android:background="#2c3e50"
                 android:fadingEdgeLength="70dip"
                 android:gravity="center_vertical"
                 android:padding="0dip"
@@ -107,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <com.android.musicfx.widget.Knob
+                    <com.xosp.equalizer.widget.Knob
                         android:id="@+id/bBStrengthKnob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -126,7 +127,7 @@
                         android:gravity="center"
                         android:text="@string/bass_boost_strength"
                         android:textAlignment="center"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -135,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <com.android.musicfx.widget.Knob
+                    <com.xosp.equalizer.widget.Knob
                         android:id="@+id/vIStrengthKnob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -154,7 +155,7 @@
                         android:singleLine="true"
                         android:text="@string/virtualizer_strength"
                         android:textAlignment="center"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -173,7 +174,7 @@
                     android:layout_marginRight="10dp"
                     android:alpha="0.54"
                     android:text="@string/pr_title"
-                    android:textColor="#000000"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -184,9 +185,9 @@
                     android:gravity="center"
                     android:minHeight="10dp"
                     android:spinnerMode="dropdown"
-                    android:textColor="@color/actionbarcolor" />
+                    android:textColor="@android:color/white" />
             </LinearLayout>
-        </com.android.musicfx.widget.InterceptableLinearLayout>
+        </com.xosp.equalizer.widget.InterceptableLinearLayout>
     </RelativeLayout>
 
 </LinearLayout>

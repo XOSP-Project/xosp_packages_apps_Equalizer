@@ -18,7 +18,6 @@
     <style name="Widget.Holo.SeekBar.Vertical" parent="@android:Widget.Holo.SeekBar">
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/scrubber_progress_vertical_holo_dark</item>
-<!-- not public       <item name="android:indeterminateDrawable">@android:drawable/scrubber_progress_horizontal_holo_dark</item> -->
         <item name="android:minWidth">33dip</item>
         <item name="android:maxWidth">33dip</item>
         <item name="android:thumb">@drawable/scrubber_control_selector_holo</item>
@@ -32,15 +31,16 @@
 
     <style name="EqTheme"
            parent="@android:style/Theme.Material">
-        <item name="android:colorPrimary">@color/highlight</item>
-        <item name="android:colorPrimaryDark">@color/lowlight</item>
+        <item name="android:colorPrimary">#2c3e50</item>
+        <item name="android:colorPrimaryDark">#2c3e50</item>
         <item name="android:colorAccent">@color/highlight</item>
         <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="android:navigationBarColor">#2c3e50</item>
     </style>
 
    <!-- ActionBar styles -->
     <style name="CustomActionBar" parent="@android:style/Theme.Material">
-        <item name="android:background">@color/highlight</item>
+        <item name="android:background">#34495e</item>
         <item name="android:titleTextStyle">@style/EqTheme.CustomActionBar.Text</item>
     </style>
 
