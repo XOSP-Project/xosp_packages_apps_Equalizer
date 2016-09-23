@@ -37,4 +37,4 @@
     android:ellipsize="marquee"
     android:drawablePadding="2dp"
     android:drawableRight="@drawable/more_icon"
-    android:textColor="@color/highlight"/>
+    android:textColor="@color/grey"/>
