@@ -31,6 +31,7 @@ package com.xosp.equalizer.widget;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -74,6 +75,9 @@ public class Gallery extends android.widget.Gallery {
                 if (mEnabled && mOnItemSelectedListener != null) {
                     mOnItemSelectedListener.onItemSelected(position);
                 }
+                int mGalleryTextSize =
+                        getResources().getDimensionPixelSize(R.dimen.gallery_text_size);
+                mLastView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mGalleryTextSize);
             }
 
             @Override

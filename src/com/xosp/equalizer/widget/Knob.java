@@ -119,7 +119,7 @@ public class Knob extends FrameLayout {
         mKnobOff = (ImageView) findViewById(R.id.knob_toggle_off);
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(mHighlightColor);
+        mPaint.setColor(mLowlightColor);
         mPaint.setStrokeWidth(STROKE_WIDTH);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -205,9 +205,9 @@ public class Knob extends FrameLayout {
             mOn = on;
         }
         on = on && mEnabled;
-        mProgressTV.setTextColor(on ? mHighlightColor : mDisabledColor);
+        mProgressTV.setTextColor(on ? mLowlightColor : mDisabledColor);
         setProgressText(on);
-        mPaint.setColor(on ? mHighlightColor : mDisabledColor);
+        mPaint.setColor(on ? mLowlightColor : mDisabledColor);
 
         if (mBinary) {
             mKnobOn.setVisibility(View.GONE);
@@ -257,7 +257,8 @@ public class Knob extends FrameLayout {
                     w - STROKE_WIDTH, h - STROKE_WIDTH - diff);
         }
 
-        mProgressTV.setTextSize(TypedValue.COMPLEX_UNIT_PX, size * TEXT_SIZE);
+        int mKnobTextSize = getResources().getDimensionPixelSize(R.dimen.knob_text_size);
+        mProgressTV.setTextSize(TypedValue.COMPLEX_UNIT_PX, mKnobTextSize);
         mProgressTV.setVisibility(View.VISIBLE);
     }
 

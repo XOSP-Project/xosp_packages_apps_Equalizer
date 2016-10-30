@@ -37,4 +37,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <color name="disabled_knob">#e74c3c</color>
     <color name="actionbarcolor">#0D47A1</color>
     <color name="spinner_back_color">#34495e</color>
+    <color name="spinner_detail_back">#fafafa</color>
+    <color name="spinner_detail_text">#000000</color>
 </resources>
