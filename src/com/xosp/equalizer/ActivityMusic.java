@@ -105,7 +105,7 @@ public class ActivityMusic extends Activity {
     /**
      * Indicates if Equalizer effect is supported.
      */
-    private boolean mEqualizerSupported;
+    private boolean mEqualizerSupported=true;
     /**
      * Indicates if Preset Reverb effect is supported.
      */
@@ -131,6 +131,8 @@ public class ActivityMusic extends Activity {
     private TextView toggleSwithText;
     private StringBuilder mFormatBuilder = new StringBuilder();
     private Formatter mFormatter = new Formatter(mFormatBuilder, Locale.getDefault());
+    
+    private boolean mResume=false;
 
     // Preset Reverb fields
     /**
@@ -460,13 +462,15 @@ public class ActivityMusic extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        if ((mVirtualizerSupported) || (mBassBoostSupported) || (mEqualizerSupported)
-                || (mPresetReverbSupported)) {
-                AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-                mAudioPortUpdateListener = new MyOnAudioPortUpdateListener();
-                am.registerAudioPortUpdateListener(mAudioPortUpdateListener);
 
-            // Update UI
+        //If we have an AudioManager alredy registered use it, and keep it in memory
+        if (mResume) {
+            mResume=false;
+        }
+        else{
+            AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
+            mAudioPortUpdateListener = new MyOnAudioPortUpdateListener();
+            am.registerAudioPortUpdateListener(mAudioPortUpdateListener);
             updateUI();
         }
     }
@@ -479,12 +483,8 @@ public class ActivityMusic extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-
-        // Unregister AudioPortUpdateListener. (These affect the visible UI,
-        // so we only care about them while we're in the foreground.)
-            AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-            am.unregisterAudioPortUpdateListener(mAudioPortUpdateListener);
-
+        mResume=true;
+        updateUI();
     }
 
     private void reverbSpinnerInit(Spinner spinner) {
@@ -687,6 +687,7 @@ public class ActivityMusic extends Activity {
 
             @Override
             public void onStartTrackingTouch(final Visualizer v) {
+                equalizerUpdateDisplay();
             }
 
             @Override

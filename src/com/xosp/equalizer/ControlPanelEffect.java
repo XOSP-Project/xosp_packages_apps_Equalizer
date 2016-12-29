@@ -169,6 +169,7 @@ public class ControlPanelEffect {
             // init global on/off switch
             final boolean isGlobalEnabled = prefs.getBoolean(Key.global_enabled.toString(),
                     GLOBAL_ENABLED_DEFAULT);
+            
             editor.putBoolean(Key.global_enabled.toString(), isGlobalEnabled);
             Log.v(TAG, "isGlobalEnabled = " + isGlobalEnabled);
 
@@ -467,6 +468,7 @@ public class ControlPanelEffect {
             } else if (controlMode == ControlMode.CONTROL_EFFECTS) {
                 final boolean isGlobalEnabled = prefs.getBoolean(Key.global_enabled.toString(),
                         GLOBAL_ENABLED_DEFAULT);
+                
                 if (isGlobalEnabled == true) {
                     // Set effect parameters
                     switch (key) {
@@ -1039,6 +1041,7 @@ public class ControlPanelEffect {
 
         final boolean isGlobalEnabled = prefs.getBoolean(Key.global_enabled.toString(),
                 GLOBAL_ENABLED_DEFAULT);
+        
         editor.putBoolean(Key.global_enabled.toString(), isGlobalEnabled);
 
         if (!isGlobalEnabled) {
