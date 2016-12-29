@@ -29,8 +29,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <resources>
-    <color name="highlight">#27ae60</color>
-    <color name="lowlight">#2ecc71</color>
+    <color name="highlight">#006098</color>
+    <color name="lowlight">#0083d0</color>
     <color name="grey">#bdc3c7</color>
     <color name="disabled">#e74c3c</color>
     <color name="disabled_gallery">#e74c3c</color>
