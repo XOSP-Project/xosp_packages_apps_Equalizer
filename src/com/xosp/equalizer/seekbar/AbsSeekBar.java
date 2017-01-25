@@ -25,10 +25,12 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
+import android.util.Log;
 
 public abstract class AbsSeekBar extends ProgressBar {
     private Drawable mThumb;
     private int mThumbOffset;
+    private final static String TAG = "AbsSeekBar-JAVA";
     
     /**
      * On touch, this offset plus the scaled value from the position of the
@@ -161,6 +163,7 @@ public abstract class AbsSeekBar extends ProgressBar {
      *            presses the arrow keys.
      */
     public void setKeyProgressIncrement(int increment) {
+        Log.d(TAG, "setKeyProgressIncrement mKeyProgressIncrement="+mKeyProgressIncrement+" increment="+increment);
         mKeyProgressIncrement = increment < 0 ? -increment : increment;
     }
 
@@ -179,6 +182,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     @Override
     public synchronized void setMax(int max) {
         super.setMax(max);
+        Log.d(TAG, "setMax max="+max+" mKeyProgressIncrement="+mKeyProgressIncrement);
 
         if ((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20)) {
             // It will take the user too long to change this via keys, change it

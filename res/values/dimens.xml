@@ -24,5 +24,6 @@
     <dimen name="switch_text_margin">58dp</dimen>
     <dimen name="knob_text_size">20sp</dimen>
     <dimen name="gallery_text_size">16sp</dimen>
+    <dimen name="each_visualizer_width">48dp</dimen>
 
 </resources>

@@ -54,6 +54,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.RemoteViews.RemoteView;
+import android.util.Log;
 
 
 /**
@@ -192,6 +193,7 @@ public class ProgressBar extends View {
     private static final int MAX_LEVEL = 10000;
     private static final int ANIMATION_RESOLUTION = 200;
     private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
+    private final static String TAG = "ProgressBar-JAVA";
 
     int mMinWidth;
     int mMaxWidth;
@@ -653,6 +655,7 @@ public class ProgressBar extends View {
     
     @android.view.RemotableViewMethod
     synchronized void setProgress(int progress, boolean fromUser) {
+        Log.d(TAG, "setProgress progress="+progress+" mIndeterminate="+mIndeterminate);
         if (mIndeterminate) {
             return;
         }
@@ -762,6 +765,7 @@ public class ProgressBar extends View {
      */
     @android.view.RemotableViewMethod
     public synchronized void setMax(int max) {
+        Log.d(TAG, "setMax max="+max+" mMax="+mMax);
         if (max < 0) {
             max = 0;
         }
@@ -1013,6 +1017,7 @@ public class ProgressBar extends View {
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Drawable d = mCurrentDrawable;
 
+        Log.d(TAG, "onMeasure widthMeasureSpec="+widthMeasureSpec+" heightMeasureSpec="+heightMeasureSpec);
         int dw = 0;
         int dh = 0;
         if (d != null) {
