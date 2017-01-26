@@ -709,7 +709,6 @@ public class ActivityMusic extends Activity {
             v.setText(format("%.0f", centerFreqHz) + unitPrefix);
             v.setMax(mEqualizerMaxBandLevel - mEqualizerMinBandLevel);
             v.setOnSeekBarChangeListener(listener);
-            v.setOnTouchListener(tl);
             eqcontainer.addView(v, lp);
             mEqualizerVisualizer[band] = v;
         }
