@@ -115,7 +115,6 @@ public class ActivityMusic extends Activity {
     private final Visualizer[] mEqualizerVisualizer = new Visualizer[EQUALIZER_MAX_BANDS];
     private int mNumberEqualizerBands;
     private int mEqualizerMinBandLevel;
-    private int mEQPresetUserPos = 1;
     private int mEQPreset;
     private int[] mEQPresetUserBandLevelsPrev;
     private String[] mEQPresetNames;
@@ -290,8 +289,6 @@ public class ActivityMusic extends Activity {
             mEQPresetNames[i] = localizePresetName(eqPresetName);
         }
         mEQPresetNames[numPresets] = getString(R.string.ci_extreme);
-        mEQPresetNames[numPresets + 1] = getString(R.string.user);
-        mEQPresetUserPos = numPresets + 1;
 
         // Load string resource of reverb presets
         mReverbPresetNames = new String[mReverbPresetRSids.length];
@@ -518,7 +515,7 @@ public class ActivityMusic extends Activity {
             @Override
             public void onItemSelected(int position) {
                 mEQPreset = position;
-                showSeekBar(position == mEQPresetUserPos);
+                //showSeekBar(position == mEQPresetUserPos);
                 equalizerSetPreset(position);
             }
         });
@@ -555,9 +552,6 @@ public class ActivityMusic extends Activity {
                 on = ControlPanelEffect.getParameterBoolean(mContext, mCallingPackageName,
                         mAudioSession, ControlPanelEffect.Key.bb_enabled);
                 view.setEnabled(on);
-            } else if (enabled && view == eq) {
-                showSeekBar(mEQPreset == mEQPresetUserPos);
-                view.setEnabled(true);
             } else {
                 view.setEnabled(enabled);
             }
@@ -693,26 +687,6 @@ public class ActivityMusic extends Activity {
             @Override
             public void onStopTrackingTouch(final Visualizer v) {
                 equalizerUpdateDisplay();
-            }
-        };
-
-        final OnTouchListener tl = new OnTouchListener() {
-            @Override
-            public boolean onTouch(final View v, final MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        if (mEQPreset != mEQPresetUserPos) {
-                            final Toast toast = Toast.makeText(mContext,
-                                    getString(R.string.eq_custom), Toast.LENGTH_SHORT);
-                            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0,
-                                    toast.getYOffset() * 2);
-                            toast.show();
-                            return true;
-                        }
-                        return false;
-                    default:
-                        return false;
-                }
             }
         };
 
