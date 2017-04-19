@@ -29,8 +29,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <resources>
-    <color name="highlight">#006098</color>
-    <color name="lowlight">#0083d0</color>
+    <color name="highlight">@android:color/xosp_blue_palette_600</color>
+    <color name="lowlight">@android:color/xosp_blue_palette_500</color>
+    <color name="background">@android:color/xosp_midnight_palette_700</color>
     <color name="grey">#bdc3c7</color>
     <color name="disabled">#e74c3c</color>
     <color name="disabled_gallery">#e74c3c</color>

@@ -18,7 +18,7 @@
     xmlns:custom="http://schemas.android.com/apk/res/com.xosp.equalizer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2c3e50"
+    android:background="@color/background"
     android:orientation="vertical" >
 
     <TextView
@@ -43,7 +43,7 @@
             android:id="@+id/togglelayout"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="#34495e"
+            android:background="@color/background"
             android:orientation="horizontal" >
 
             <TextView
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/togglelayout"
-            android:background="#2c3e50"
+            android:background="@color/background"
             android:orientation="vertical" >
 
             <include
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="7"
-                android:background="#2c3e50"
+                android:background="@color/background"
                 android:fadingEdgeLength="70dip"
                 android:gravity="center_vertical"
                 android:padding="0dip"
